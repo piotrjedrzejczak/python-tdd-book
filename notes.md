@@ -20,9 +20,10 @@
 
     > the idea here is for the functional test to drive the high level development and the unittest the explicit implementation.
 
-    ![image info](./images/tdd.png)
+![image info](./images/tdd.png)
 
 # passed unittest is a nice point to commit
 # if the changes made are in tracked files just do : $ git commit -am "First unittest passed"
 # don't test constants in unittests
 # don't refactor without tests
+
