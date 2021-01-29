@@ -14,7 +14,7 @@
 # from now on our development cycle will look like this:
     - Write a functional test (user story)
     - Try to figure out what to write to make that test pass, and then start writing a unittest for it.
-    - Once you have both functional test and unittest failing, you start writing production code that will pass the unittest. You might bounce around 2 & 3 point of this list to achieve the best possible result.
+    - Once you have both functional test and unittest failing, you start writing production code that will pass the unittest. You might bounce around 2 & 3 because there is more than one thing failing in the unittest - that's good, don't try to fix everything at once, fix one error at a time.
     - Now rerun the functional test to see if it passes.
 
     > the idea here is for the functional test to drive the high level development and the unittest the explicit implementation.
