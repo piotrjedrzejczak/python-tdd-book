@@ -1,6 +1,7 @@
 # Set up venv: $ py -3.7 -m venv virtualenv
 # Install django and selenium: $ pip install "django" "selenium"
 # Start with creating the app by : $ django-admin startproject <projectname> .
+# add the app to INSTALLED_APPS in settings.py
 # Try running the app with: $ python manage.py runserver
 # git init your repository
 # create .gitignore
@@ -19,4 +20,7 @@
 
     > the idea here is for the functional test to drive the high level development and the unittest the explicit implementation.
 
-
+# passed unittest is a nice point to commit
+# if the changes made are in tracked files just do : $ git commit -am "First unittest passed"
+# don't test constants in unittests
+# don't refactor without tests
