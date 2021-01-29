@@ -24,7 +24,7 @@ class NewVisitor(unittest.TestCase):
         inputbox = self.browser.find_element_by_id('id_new_item')
         self.assertEqual(
             inputbox.get_attribute('placeholder'),
-            'Enter a to do item'
+            'Enter a to-do item'
         )
         
         # User types in "feed my cat" to a textbox.
@@ -38,12 +38,13 @@ class NewVisitor(unittest.TestCase):
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')
         self.assertTrue(
-            any(row.text == '1: feed my cat' for row in rows)
+            any(row.text == '1: feed my cat' for row in rows),
+            "New to-do item did not appear in table"
         )
 
         # The textbox is still there so user can enter another item.
         self.fail('Finish the test bud!')
-        
+
         # When user added his first item do the list it's now preserved
         # under a unique URL.
 
