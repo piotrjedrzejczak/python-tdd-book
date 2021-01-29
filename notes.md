@@ -15,10 +15,12 @@
 # from now on our development cycle will look like this:
     - Write a functional test (user story)
     - Try to figure out what to write to make that test pass, and then start writing a unittest for it.
-    - Once you have both functional test and unittest failing, you start writing production code that will pass the unittest. You might bounce around 2 & 3 because there is more than one thing failing in the unittest - that's good, don't try to fix everything at once, fix one error at a time.
+    - Once you have both functional test and unittest failing, you start writing minimal production code that will try to resolve the error that you are currently facing from the unittest. You might bounce around 2 & 3 because there is more than one thing failing in the unittest - that's good, don't try to fix everything at once, fix one error at a time.
     - Now rerun the functional test to see if it passes.
 
     > the idea here is for the functional test to drive the high level development and the unittest the explicit implementation.
+
+    ![image info](./tdd.png)
 
 # passed unittest is a nice point to commit
 # if the changes made are in tracked files just do : $ git commit -am "First unittest passed"
