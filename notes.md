@@ -26,4 +26,7 @@
 # if the changes made are in tracked files just do : $ git commit -am "First unittest passed"
 # don't test constants in unittests
 # don't refactor without tests
+# database migrations
+# unittest best practice - each test should test one thing only
+# always redirect after POST
 
