@@ -31,4 +31,11 @@
 # always redirect after POST
 # nice list of code smells -> https://blog.codinghorror.com/code-smells/
 # have a todo list - its good for you
+# $ python manage.py test <app_name> or <package_name>
+
+- ensure test isolation and managing global state - Different tests shouldn’t affect one another. This means we need to reset any permanent state at the end of each test. Django’s test runner helps us do this by creating a test database, which it wipes clean in between each tes
+
+- avoid voodoo sleeps
+
+- don't rely on selenium implicit waits
 
