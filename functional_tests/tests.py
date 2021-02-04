@@ -1,9 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from django.test import LiveServerTestCase
 import unittest, time
 
 
-class NewVisitor(unittest.TestCase):
+class NewVisitor(LiveServerTestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox()
@@ -18,7 +19,7 @@ class NewVisitor(unittest.TestCase):
 
     def test_can_start_a_list_and_retreive_it_later(self):
         # User navigates to the main page of the website.
-        self.browser.get('http://localhost:8000')
+        self.browser.get(self.live_server_url)
 
         # The website title suggests it's another boring todo list app.
         self.assertIn('To-Do', self.browser.title)
@@ -46,6 +47,3 @@ class NewVisitor(unittest.TestCase):
 
         # When user added his first item do the list it's now preserved
         # under a unique URL.
-
-if __name__ == '__main__':
-    unittest.main()

@@ -29,4 +29,6 @@
 # database migrations
 # unittest best practice - each test should test one thing only
 # always redirect after POST
+# nice list of code smells -> https://blog.codinghorror.com/code-smells/
+# have a todo list - its good for you
 
