@@ -55,8 +55,40 @@ class NewVisitor(LiveServerTestCase):
         inputbox.send_keys(Keys.ENTER)
         self.wait_for_row_in_list_table('1: feed my cat')
 
-        # The textbox is still there so user can enter another item.
-        self.fail('Finish the test bud!')
+    
+    def test_multiple_users_can_start_lists_at_different_urls(self):
 
-        # When user added his first item do the list it's now preserved
-        # under a unique URL.
+        # User creates his own list.
+        self.browser.get(self.live_server_url)
+        inputbox = self.browser.find_element_by_id('id_new_item')
+        inputbox.send_keys('feed my cat')
+        inputbox.send_keys(Keys.ENTER)
+        self.wait_for_row_in_list_table('1: feed my cat')
+
+        # When new list is created a unique URL should be generated.
+        personal_url = self.browser.current_url
+        self.assertRegex(personal_url, '/lists/.+')
+
+        # New users comes in and creates a list.
+        self.browser.quit()
+        self.browser = webdriver.Firefox()
+
+        # User does not find the previous users list
+        self.browser.get(self.live_server_url)
+        page_text = self.browser.find_element_by_tag_name('body').text
+        self.assertNotIn('feed my cat', page_text)
+        
+        # Now the users creates his own list
+        inputbox = self.browser.find_element_by_id('id_new_item')
+        inputbox.send_keys('pet my doggo')
+        inputbox.send_keys(Keys.ENTER)
+        self.wait_for_row_in_list_table('1: pet my doggo')
+
+        # He gets his own URL
+        next_personal_url = self.browser.current_url
+        self.assertRegex(next_personal_url, '/lists/.+')
+        self.assertNotEqual(personal_url, next_personal_url)
+
+        # No trace of previous users list items
+        page_text = self.browser.find_element_by_tag_name('body').text
+        self.assertNotIn('feed my cat', page_text)

@@ -39,3 +39,9 @@
 
 - don't rely on selenium implicit waits
 
+# YAGNI - You ain't gonna need it
+- As software developers, we have fun creating things, and sometimes it’s hard to resist the urge to build things just because an idea occurred to us and we might need it. The trouble is that more often than not, no matter how cool the idea was, you won’t end up using it. Instead you have a load of unused code, adding to the complexity of your application. YAGNI is the mantra we use to resist our overenthusiastic creative urges.
+
+# convention of double hashes (##) - used for "meta comments" - explaining how and why the FT is setup in a cerrtain way unlike the normal comments representing the user story
+
+
