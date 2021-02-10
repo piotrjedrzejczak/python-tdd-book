@@ -1,14 +1,14 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import WebDriverException
-from django.test import LiveServerTestCase
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 import time
 
 
 MAX_WAIT_TIME = 10
 
 
-class NewVisitor(LiveServerTestCase):
+class NewVisitor(StaticLiveServerTestCase):
 
 
     def setUp(self):

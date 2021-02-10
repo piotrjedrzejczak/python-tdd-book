@@ -59,4 +59,7 @@
 
     - You ain’t gonna need it! Avoid the temptation to write code that you think might be useful, just because it suggests itself at the time. Chances are, you won’t use it, or you won’t have anticipated your future requirements correctly. See [chapter_outside_in] for one methodology that helps us avoid this trap.
 
+# Genereally you shouldn't test static files, but including small test of few components will help detect if the stylesheets have loaded
 
+# Don't use python to serve static files, let the nginx or apache serve them for you
+# Use 'collectstatic' to gather up all your static files from various folders
