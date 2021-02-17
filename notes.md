@@ -63,3 +63,5 @@
 
 # Don't use python to serve static files, let the nginx or apache serve them for you
 # Use 'collectstatic' to gather up all your static files from various folders
+
+# red -> green -> refactor!
