@@ -2,10 +2,12 @@ import random
 from fabric.contrib.files import append, exists
 from fabric.api import cd, env, local, run
 
+
 REPO_URL = 'https://github.com/piotrjedrzejczak/python-tdd-book.git'  
 
 def deploy():
-    site_folder = f'/home/{env.user}/sites/{env.host}'  
+    env.key_filename = '~/.ssh/drop'
+    site_folder = f'/home/{env.user}/sites/www.{env.host}'  
     run(f'mkdir -p {site_folder}')  
     with cd(site_folder):  
         _get_latest_source()
@@ -25,7 +27,7 @@ def _get_latest_source():
 
 def _update_virtualenv():
     if not exists('virtualenv/bin/pip'):
-        run(f'python3.7 -m venv virtualenv')
+        run(f'python3.6 -m venv virtualenv')
     run ('./virtualenv/bin/pip install -r requirements.txt')
 
 def _create_or_update_dotenv():
@@ -39,7 +41,7 @@ def _create_or_update_dotenv():
         append('.env', f'DJANGO_SECRET_KEY={new_secret}')
 
 def _update_static_files():
-    run('./virtualenv/bin/python manage.py collectstatic --noinput')
+    run('./virtualenv/bin/python3.6 manage.py collectstatic --noinput')
 
 def _update_database():
-    run('./virtualenv/bin/python manage.py migrate --noinput')
+    run('./virtualenv/bin/python3.6 manage.py migrate --noinput')
