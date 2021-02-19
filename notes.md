@@ -68,3 +68,6 @@
 
 # do the user input validation at db layer - its the safest option, unless there is a very good reason to do it elsewhere
 
+# One of the reasons that the "three strikes and refactor" rule exists is that, if you wait until you have three use cases, each might be slightly different, and it gives you a better view for what the common functionality is. If you refactor too early, you may find that the third use case doesn’t quite fit with your refactored code…​
+
+# checkout django-crispy-forms or django-floppyforms
