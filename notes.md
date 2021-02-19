@@ -65,3 +65,6 @@
 # Use 'collectstatic' to gather up all your static files from various folders
 
 # red -> green -> refactor!
+
+# do the user input validation at db layer - its the safest option, unless there is a very good reason to do it elsewhere
+
