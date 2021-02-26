@@ -71,3 +71,12 @@
 # One of the reasons that the "three strikes and refactor" rule exists is that, if you wait until you have three use cases, each might be slightly different, and it gives you a better view for what the common functionality is. If you refactor too early, you may find that the third use case doesn’t quite fit with your refactored code…​
 
 # checkout django-crispy-forms or django-floppyforms
+
+
+# Thin views
+If you find yourself looking at complex views, and having to write a lot of tests for them, it’s time to start thinking about whether that logic could be moved elsewhere: possibly to a form, like we’ve done here.
+
+Another possible place would be a custom method on the model class. And—​once the complexity of the app demands it—​out of Django-specific files and into your own classes and functions, that capture your core business logic.
+
+# Each test should test one thing
+The heuristic is to be suspicious if there’s more than one assertion in a test. Sometimes two assertions are closely related, so they belong together. But often your first draft of a test ends up testing multiple behaviours, and it’s worth rewriting it as several tests. Helper functions can keep them from getting too bloated.
