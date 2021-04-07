@@ -80,3 +80,13 @@ Another possible place would be a custom method on the model class. And—​onc
 
 # Each test should test one thing
 The heuristic is to be suspicious if there’s more than one assertion in a test. Sometimes two assertions are closely related, so they belong together. But often your first draft of a test ends up testing multiple behaviours, and it’s worth rewriting it as several tests. Helper functions can keep them from getting too bloated.
+
+# some testing alternatives
+- nose https://nose.readthedocs.io/en/latest/
+- green https://github.com/CleanCut/green
+- pytest https://docs.pytest.org/en/stable/
+
+# js testing pitfalls
+
+fixtures, execution order and global state
+One of the difficulties with JavaScript in general, and testing in particular, is in understanding the order of execution of our code (i.e., what happens when). When does our code in list.js run, and when does each of our tests run? And how does that interact with global state, that is, the DOM of our web page, and the fixtures that we’ve already seen are supposed to be cleaned up after each test?
