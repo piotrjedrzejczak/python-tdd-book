@@ -100,3 +100,12 @@ which is rather primitive but works - look for `require.js` for someting more ro
 - Write a unit test in either language, and see it fail.
 - Write some code in either language, and make the test pass.
 - Rinse and repeat.
+
+Somethings to explore in JS world
+
+- you can run js tests in command line
+- make sure to get a linter for js code
+- Jasmine is what react/angular uses for assertions, probably worth using over qunit
+
+- author recommends to read Javascript: The good parts, Douglas Crockford
+
