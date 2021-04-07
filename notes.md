@@ -90,3 +90,13 @@ The heuristic is to be suspicious if there’s more than one assertion in a test
 
 fixtures, execution order and global state
 One of the difficulties with JavaScript in general, and testing in particular, is in understanding the order of execution of our code (i.e., what happens when). When does our code in list.js run, and when does each of our tests run? And how does that interact with global state, that is, the DOM of our web page, and the fixtures that we’ve already seen are supposed to be cleaned up after each test?
+
+when naming js functions be aware of the shared namespace - make sure to create your own with `window.YourUniqueNamespace = {};`
+which is rather primitive but works - look for `require.js` for someting more robust
+
+# TDD cycle with JS
+- Write an FT and see it fail.
+- Figure out what kind of code you need next: Python or JavaScript?
+- Write a unit test in either language, and see it fail.
+- Write some code in either language, and make the test pass.
+- Rinse and repeat.
