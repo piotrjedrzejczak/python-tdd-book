@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'lists',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -86,6 +87,12 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
+AUTH_USER_MODEL = 'accounts.ListUser'
+
+AUTHENTICATION_BACKENDS = [
+    'accounts.authentication.PasswordlessAuthenticationBackend'
+]
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -121,3 +128,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Email
+
+EMAIL_HOST = 'poczta.o2.pl'
+EMAIL_HOST_USER = 'work.it@o2.pl'
+EMAIL_HOST_PASSWORD = 'Workit!@#123'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

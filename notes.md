@@ -109,3 +109,15 @@ Somethings to explore in JS world
 
 - author recommends to read Javascript: The good parts, Douglas Crockford
 
+Deployment Procedure Review
+We’ve done a couple of deploys now, so this is a good time for a little recap:
+
+git push latest code
+
+Deploy to staging and run functional tests against staging
+
+Deploy to live
+
+Tag the release
+
+Deployment procedures evolve and get more complex as projects grow, and it’s an area that can grow hard to maintain, full of manual checks and procedures, if you’re not careful to keep things automated. There’s lots more to say about this, but it’s out of scope for this book. Do be sure to check out [appendix3], and have a read around on the topic of "continuous deployment."
